@@ -14,7 +14,7 @@ def recconect():
             time.sleep(5)
             recconect()
 
-ip_list = ["Host"]
+ip_list = ["Host"] #list of ip or domain name
 while 1:
     for ip in ip_list:
         ping = subprocess.call(["ping", ip])
