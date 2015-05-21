@@ -5,22 +5,22 @@ import subprocess
 
 def recconect():
     for ip in ip_list:
-        ping = subprocess.call(["ping", ip])
+        ping = subprocess.call([u"ping", ip])
         if ping == 0:
             time.sleep(30)
-            print("UP") #rdectop reconect
+            print(u"UP") #rdectop reconect
             return ping
         else:
             time.sleep(5)
             recconect()
 
-ip_list = ["Host"] #list of ip or domain name
+ip_list = [u"8.8.8.8"] #list of ip or domain name
 while 1:
     for ip in ip_list:
-        ping = subprocess.call(["ping", ip])
+        ping = subprocess.call([u"ping", ip])
         if ping != 0:
-            print("Down")
+            print(u"Down")
             recconect()
         else:
-            print("Up")
+            print(u"Up")
             time.sleep(30)
